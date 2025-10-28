@@ -5,7 +5,7 @@ import joblib
 app = Flask(__name__)
 
 # 🟣 Load the trained ML model
-model = joblib.load("stock_suggestion_model.pkl")
+model = joblib.load("model.pkl")
 
 # 🟣 Encoding maps (same logic used in training)
 mapping = {
@@ -95,3 +95,4 @@ def predict():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
