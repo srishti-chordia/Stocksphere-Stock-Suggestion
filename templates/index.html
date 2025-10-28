@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor Profile Quiz</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f6f6fc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            width: 420px;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #6a5acd;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            width: 100%;
+            margin-top: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #5a4ab1;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Investor Profile Quiz</h2>
+        <form action="/predict" method="POST">
+            
+            <label>Age Group</label>
+            <select name="age_group" required>
+                <option value="18-25">18-25</option>
+                <option value="26-35">26-35</option>
+                <option value="36-50">36-50</option>
+                <option value="50+">50+</option>
+            </select>
+
+            <label>Investment Horizon</label>
+            <select name="investment_horizon" required>
+                <option value="short">Short Term</option>
+                <option value="medium">Medium Term</option>
+                <option value="long">Long Term</option>
+            </select>
+
+            <label>Financial Experience</label>
+            <select name="financial_experience" required>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="expert">Expert</option>
+            </select>
+
+            <label>Annual Income</label>
+            <select name="annual_income" required>
+                <option value="low">Below ₹5 LPA</option>
+                <option value="medium">₹5–10 LPA</option>
+                <option value="high">Above ₹10 LPA</option>
+            </select>
+
+            <label>Risk Tolerance</label>
+            <select name="risk_tolerance" required>
+                <option value="low">Low (I prefer safety over risk)</option>
+                <option value="medium">Medium (Balanced risk & return)</option>
+                <option value="high">High (I can handle significant risks)</option>
+            </select>
+
+            <button type="submit">Calculate My Profile</button>
+        </form>
+    </div>
+</body>
+</html>

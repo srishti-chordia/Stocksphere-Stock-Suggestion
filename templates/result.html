@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggested Stocks</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f6f6fc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            width: 400px;
+            text-align: center;
+        }
+        h2 { color: #333; }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #ece9ff;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 8px;
+            color: #4b3db5;
+            font-weight: 500;
+        }
+        .error { color: red; }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background: #6a5acd;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Suggested Stocks</h2>
+        {% if error %}
+            <p class="error">Error: {{ error }}</p>
+        {% else %}
+            <ul>
+                {% for stock in stocks %}
+                    <li>{{ stock }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <a href="/">Back</a>
+    </div>
+</body>
+</html>
